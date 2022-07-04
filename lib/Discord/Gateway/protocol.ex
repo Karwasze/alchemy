@@ -18,6 +18,7 @@ defmodule Alchemy.Discord.Protocol do
         inspect(state.shard) <>
         " Disconnected from the Gateway; restarting the Gateway"
     )
+    Process.exit(self(), :brutal_kill)
   end
 
   # Invalid session_id. This is quite fatal.
